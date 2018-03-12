@@ -1,0 +1,10 @@
+1、编写个shell脚本将当前目录下大于10K的文件转移到/tmp目录下
+#/bin/sh
+#Programm :
+# Using for move currently directory to /tmp
+for FileName in `ls -l | awk '$5>10240 {print $9}'`
+do
+mv $FileName /tmp
+done
+ls -al /tmp
+echo "Done! "
